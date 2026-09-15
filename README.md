@@ -10,25 +10,23 @@ Drop-in Bash startup files for Vocareum notebook assignments.
    `john.taylor@<host>:~$`), so any screenshot a student submits carries their
    identity.
 1. **Quality-of-life improvements**
-    -   colorized PS1 prompt, `ls`, `grep`, `diff`, GCC diagnostics and man pages
-        -   Note: man pages may be disabled in containerized environments; run `sudo unminimize` to enable the full software suite
-    -   a large set of handy aliases (`ll`, `la`, `grepi`, `findf`, ...)
-    -   interactive `rm`/`cp`/`mv` as a safety net
-    -   `autocd`, `cdspell`, `globstar` and other convenience shell options
-    -   `nano` as the default editor
+    -   `nano` as the default editor for Git commit messages, `Ctrl-X Ctrl-E` command line editing, etc.
+    -   `rm`/`cp`/`mv` commands prompt the user before destroying files
     -   `Ctrl-S` freed up for forward history search
+    -   colorized `ls`, `grep`, `diff`, GCC diagnostics and man pages
+        -   Note: man pages may be disabled in containerized environments; run `sudo unminimize` to enable the full software suite
+    -   a large set of handy aliases (`ll`, `la`, `diffu`, `grepi`, `findf`, `pd`, ...)
+    -   `autocd`, `cdspell`, `globstar` and other convenience shell options
     -   and full programmable tab completion via the bundled `.bash_completion` (bash-completion 2.11), used only if the system copy is missing
 
 
 ## Installation
 
-These steps need to be done only once per assignment
+These steps need to be done only once per Vocareum assignment.
 
 0. Create a Vocareum **notebook** assignment.
 1. Click **Configure Workspace** to open the administrator terminal.
-2. Copy or upload `.bashrc` and `.bash_completion` into `/voc/startercode`.
-   The web uploader may refuse or hide dot-files, so upload them as `bashrc`
-   and `bash_completion` if necessary.
+2. Copy or upload [`bashrc`](./bashrc) and [`bash_completion`](./bash_completion) into `/voc/startercode`.
 3. Rename them so the names begin with a dot:
 
    ```sh
