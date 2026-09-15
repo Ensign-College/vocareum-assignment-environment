@@ -3,7 +3,7 @@
 # for examples
 #
 # Modifed by erik.falor@ensign.edu
-# Version: 1.3
+# Version: 1.4
 # Date: Tue Sep 15 2026
 
 # If not running interactively, don't do anything
@@ -114,7 +114,6 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-unset VOC_INITIATOR_NAME
 
 # enable color support of ls and also add handy aliases
 if [[ -x /usr/bin/dircolors ]]; then
