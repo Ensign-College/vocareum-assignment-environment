@@ -94,9 +94,15 @@ fi
 VOC_INITIATOR_NAME=${VOC_INITIATOR_EMAIL%@*}
 
 if [[ "$color_prompt" == yes ]]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	if [[ $VOC_INITIATOR_EMAIL == $VOC_USER_EMAIL ]]; then
+		# Instructor configuring course == yellow username@host
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	else
+		# Student View == green username@host
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	fi
 else
-    PS1='${debian_chroot:+($debian_chroot)}${VOC_INITIATOR_NAME:-\u}@\h:\w\$ '
+	PS1='${debian_chroot:+($debian_chroot)}${VOC_INITIATOR_NAME:-\u}@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -138,7 +144,7 @@ if [[ -f ~/.bash_aliases ]]; then
     source ~/.bash_aliases
 fi
 
-# safety measures
+# Safety Measures
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
