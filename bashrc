@@ -3,7 +3,7 @@
 # for examples
 #
 # Modifed by erik.falor@ensign.edu
-# Version: 1.1
+# Version: 1.2
 # Date: Tue Sep 15 2026
 
 # If not running interactively, don't do anything
@@ -95,8 +95,8 @@ VOC_INITIATOR_NAME=${VOC_INITIATOR_EMAIL%@*}
 
 if [[ "$color_prompt" == yes ]]; then
 	if [[ $VOC_INITIATOR_EMAIL == $VOC_USER_EMAIL ]]; then
-		# Instructor configuring course == yellow username@host
-		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+		# Instructor configuring course == magenta username@host
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	else
 		# Student View == green username@host
 		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
