@@ -3,7 +3,7 @@
 # for examples
 #
 # Modifed by erik.falor@ensign.edu
-# Version: 1.2
+# Version: 1.3
 # Date: Tue Sep 15 2026
 
 # If not running interactively, don't do anything
@@ -96,7 +96,7 @@ VOC_INITIATOR_NAME=${VOC_INITIATOR_EMAIL%@*}
 if [[ "$color_prompt" == yes ]]; then
 	if [[ $VOC_INITIATOR_EMAIL == $VOC_USER_EMAIL ]]; then
 		# Instructor configuring course == magenta username@host
-		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]INSTRUCTOR \[\033[01;35m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	else
 		# Student View == green username@host
 		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]${VOC_INITIATOR_NAME:-\u}@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -114,6 +114,7 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+unset VOC_INITIATOR_NAME
 
 # enable color support of ls and also add handy aliases
 if [[ -x /usr/bin/dircolors ]]; then
