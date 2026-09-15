@@ -3,7 +3,7 @@
 # for examples
 #
 # Modifed by erik.falor@ensign.edu
-# Version: 1.0
+# Version: 1.1
 # Date: Tue Sep 15 2026
 
 # If not running interactively, don't do anything
